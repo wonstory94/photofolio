@@ -83,3 +83,13 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+define('RT_PATH','http://localhost/photofolio'); 
+define('ASSETS_PATH', RT_PATH.'/assets');
+define('IMG_DIR', ASSETS_PATH.'/img');
+define('JS_DIR',  ASSETS_PATH.'/js');
+define('CSS_DIR', ASSETS_PATH.'/css');
+define('PLUGIN_DIR', ASSETS_PATH.'/plugin');
+define('DATA_DIR', '/data');
+define('DATA_PATH',  $_SERVER['DOCUMENT_ROOT'].'/data');
