@@ -24,8 +24,8 @@
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/reset.css" />
-    <link rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/common.css" />
     <link rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/util.css" />
+    <link rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/style.css" />
 
     <!-- js -->
     <script src="<?=JS_DIR?>/main.js"></script>

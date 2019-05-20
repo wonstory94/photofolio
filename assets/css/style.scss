@@ -1,0 +1,123 @@
+html{
+    font-size: 16px;
+}
+
+
+.pageW{
+    width:100%;
+    max-width: 1200px;
+    padding:0 20px;
+    position: relative;
+    margin:0 auto;
+}
+
+.content{
+    position: relative;
+    padding-top: 120px;
+}
+
+.nav{
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 5px 24px rgba(0,0,0,.09);
+    z-index: 999;
+}
+
+// 메뉴바
+.menu_bar{
+    width: 31px;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    
+    cursor: pointer;
+    .menu_bar_item{
+        transition: all 0.3s;
+        background: #666;
+        height: 4px;
+        margin-bottom: 3px;
+        border-radius: 2px;
+        width:100%;
+    }
+    .menu_bar_item:nth-child(2){
+        width: 85%;
+    }
+    .menu_bar_item:nth-child(4){
+        width: 60%;
+        margin-bottom:0;
+    }
+    &:hover{
+        .menu_bar_item:nth-child(2), .menu_bar_item:nth-child(4){
+            width: 100%;
+        }
+    }
+}
+@media(max-width:1200px){
+    .menu_bar{
+        right: 20px;
+    }
+    .content{
+        padding-top:75px;
+    }
+}
+
+.photofolio_item{
+    background: #fff;
+    &:after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    > div{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    .photofolio_txt{
+        transition: all 0.5s;
+        opacity: 0;
+        box-sizing: border-box;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        > div {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            white-space: normal;
+            h1{
+                color:#333;
+                font-size: 1.8rem;
+                margin-bottom:0.5rem;
+            }
+            p{
+                color:#999;
+                font-size: 0.9rem;
+            }
+        }
+       &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+       }
+    }
+    &:hover{
+        > div{
+            img{
+                opacity: 0.1;
+            }
+        }
+        .photofolio_txt{
+            opacity: 1;
+        }
+    }
+}
