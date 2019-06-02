@@ -85,7 +85,7 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
-define('RT_PATH','http://localhost/photofolio'); 
+define('RT_PATH',''); 
 define('ASSETS_PATH', RT_PATH.'/assets');
 define('IMG_DIR', ASSETS_PATH.'/img');
 define('JS_DIR',  ASSETS_PATH.'/js');

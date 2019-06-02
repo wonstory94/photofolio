@@ -1,7 +1,13 @@
+@for $i from 1 to 12 {
+    .color#{$i}, .col-xs-#{$i}{
+       color:#111 * $i;
+    }
+  }
+
+
 html{
     font-size: 16px;
 }
-
 
 .pageW{
     width:100%;
@@ -15,7 +21,23 @@ html{
     position: relative;
     padding-top: 120px;
 }
-
+.nav_back{
+    position: fixed;
+    background: #fff;
+    width:100%;
+    transition: all .3s;
+    margin-top:-100vh;
+    opacity: 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    min-height: 100vh;
+    &.active{
+        margin-top:0;
+        opacity: 100;
+    }
+}
 .nav{
     height: 75px;
     width: 100%;
@@ -23,6 +45,19 @@ html{
     background: #fff;
     box-shadow: 0 5px 24px rgba(0,0,0,.09);
     z-index: 999;
+    .navigation{
+        ul{
+            float: right;
+            li{
+                float: left;
+                line-height: 75px;
+                a{
+                    color:#666;
+                    // font-weight: 800;
+                }
+            }
+        }
+    }
 }
 
 // 메뉴바
@@ -31,8 +66,40 @@ html{
     position: absolute;
     top: 25px;
     right: 0;
-    
     cursor: pointer;
+    .menu_bar_item:nth-child(4){
+        width: 60%;
+    }
+    &.none_active{
+        .menu_bar_item:nth-child(2){
+            width: 85%;
+        }
+        .menu_bar_item:nth-child(4){
+            width: 60%;
+        }
+        &:hover{
+            .menu_bar_item:nth-child(2), .menu_bar_item:nth-child(4){
+                width: 100%;
+            }
+        }
+    }
+    &.active{
+        .menu_bar_item:nth-child(1){
+            transform: translate(0, 7px) rotate(45deg);
+        }
+        .menu_bar_item:nth-child(2){
+            width: 100%;
+            opacity: 0;
+        }
+        .menu_bar_item:nth-child(3){
+            width: 100%;
+            opacity: 0;
+        }
+        .menu_bar_item:nth-child(4){
+            width: 100%;
+            transform: translate(0, -14px) rotate(-45deg);
+        }
+    }
     .menu_bar_item{
         transition: all 0.3s;
         background: #666;
@@ -40,18 +107,6 @@ html{
         margin-bottom: 3px;
         border-radius: 2px;
         width:100%;
-    }
-    .menu_bar_item:nth-child(2){
-        width: 85%;
-    }
-    .menu_bar_item:nth-child(4){
-        width: 60%;
-        margin-bottom:0;
-    }
-    &:hover{
-        .menu_bar_item:nth-child(2), .menu_bar_item:nth-child(4){
-            width: 100%;
-        }
     }
 }
 @media(max-width:1200px){
@@ -118,6 +173,103 @@ html{
         }
         .photofolio_txt{
             opacity: 1;
+        }
+    }
+}
+
+.blog_list{
+    position: relative;
+    .row:nth-child(even){
+        .col-xs-6:first-child{
+            left:50%
+        }
+        .col-xs-6:last-child{
+            right: 50%;
+        }
+    }
+    @for $i from 1 to 12 {
+        .col-md-#{$i}, .col-xs-#{$i}{
+            padding:0;
+        }
+    }
+  .blog_card{
+      transition: all .5;
+      overflow: hidden;
+      position: relative;
+      a{
+        display: flex;
+      }
+      .blog_img{
+        position: relative;
+          img{
+              width:100%;
+          }
+      }
+      .blog_txt{
+        overflow: hidden;
+        position: relative;
+        padding:1.9rem;
+        height: 100%;
+        .txt_top{
+            .title{
+                font-size: 1.5rem;
+            }
+            .sub_title{
+              color: #595959;
+              font-size: 0.875rem;        
+            }
+        }
+        .txt_bottom{
+            position: absolute;
+            bottom:1.9rem;
+            left: 1.9rem;
+            color:#999;
+        }
+      }
+      &:hover{
+        .blog_txt{
+            background: #ee7786;
+            .txt_top{
+                .title, .sub_title{
+                    color:#ffffff;
+                }
+            }
+            .txt_bottom{
+                color:#ffffff;
+            }
+        }
+    }
+  }
+ 
+}
+  
+@media(max-width:992px){
+    .blog_list{
+        .row:nth-child(even){
+            .col-xs-6:first-child{
+                left:0
+            }
+            .col-xs-6:last-child{
+                right: 0;
+            }
+        }
+        .row{
+            .col-md-6:first-child{
+                .col-xs-6:first-child{
+                    left:0
+                }
+                .col-xs-6:last-child{
+                    right: 0;
+                }
+            }
+            .col-md-6:last-child{
+                .col-xs-6:first-child{
+                    left:50%;
+                }
+                .col-xs-6:last-child{
+                    right: 50%;
+                }
+            }
         }
     }
 }

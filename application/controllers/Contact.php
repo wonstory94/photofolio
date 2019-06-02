@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Contact extends CI_Controller {
 
 	public function index()
 	{
@@ -22,5 +22,8 @@ class Welcome extends CI_Controller {
 	}
 	function blog_search(){
 
-	}
+    }
+    function contact(){
+
+    }
 }

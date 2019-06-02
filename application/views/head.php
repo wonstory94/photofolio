@@ -30,6 +30,9 @@
     <!-- js -->
     <script src="<?=JS_DIR?>/main.js"></script>
 
+    <!-- animate -->
+    <link rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/animate.css" />
+
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?=JS_DIR?>/html5shiv.js"></script>
     <script type="text/javascript" src="<?=JS_DIR?>/respond.js"></script>
